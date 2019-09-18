@@ -1,6 +1,7 @@
 package com.warhammer.docker.dockerspringboot.controllers;
 
 import com.warhammer.docker.dockerspringboot.services.UnitServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ public class IndexController {
 
     UnitServices unitServices;
 
+    @Autowired
     public IndexController(UnitServices unitServices){
         this.unitServices = unitServices;
     }
