@@ -1,24 +1,39 @@
 package com.warhammer.docker.dockerspringboot.services;
 
+import com.warhammer.docker.dockerspringboot.models.Unit;
+import com.warhammer.docker.dockerspringboot.repository.UnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
-public class UnitServices {
+public class UnitServices{
 
-    JdbcTemplate jdbcTemplate;
+    UnitRepository unitRepository;
 
-    @Autowired
-    public UnitServices(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;
+    public UnitServices(UnitRepository unitRepository){
+
+       this.unitRepository = unitRepository;
+
     }
-    @Transactional
-    public Long getNumberOfUnits(){
 
-        return jdbcTemplate.queryForObject("Select COUNT(*) From units", Long.class);
+
+    public Unit Combat(){
+        Unit combatUnit1 = unitRepository.getUnit("Savage Orc Boar Boy");
+        Unit CombatUnit2 = unitRepository.getUnit("High Helm");
+        Unit winner = CombatUnit2;
+        System.out.println(combatUnit1.getName());
+        return winner;
     }
+
+
+
+
+
+
 
 
 }
