@@ -22,8 +22,8 @@ public class UnitServices{
 
 
     public Unit Combat(){
-        Unit combatUnit1 = unitRepository.getUnit("Savage Orc Boar Boy");
-        Unit CombatUnit2 = unitRepository.getUnit("High Helm");
+        Unit combatUnit1 = unitRepository.getUnit("Swordmaster");
+        Unit CombatUnit2 = unitRepository.getUnit("White Lion");
         Unit winner = CombatUnit2;
         System.out.println(combatUnit1.getName());
         return winner;

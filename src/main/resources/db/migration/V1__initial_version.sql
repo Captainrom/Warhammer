@@ -1,5 +1,5 @@
 create table units (
-    unit_id          INT  PRIMARY KEY,
+    unit_id          INT  GENERATED ALWAYS AS IDENTITY,
     race             TEXT NOT NULL,
     name             TEXT NOT NULL,
     points_per_model INT,
@@ -8,7 +8,7 @@ create table units (
 );
 
 create table profiles (
-    profile_id         INT PRIMARY KEY,
+    profile_id         INT GENERATED ALWAYS AS IDENTITY,
     unit_id            INT,
     profile_name       TEXT NOT NULL,
     movement_allowance varchar(10),
