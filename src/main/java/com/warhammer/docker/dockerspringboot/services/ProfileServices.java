@@ -23,8 +23,8 @@ public class ProfileServices {
 
 
     public Profile Combat(){
-        Profile combatUnit1 = profileRepository.getProfile("Savage Orc Boar Boy");
-        //Profile CombatUnit2 = profileRepository.getProfile("High Helm");
+        //Profile combatUnit1 = profileRepository.getProfile("Savage Orc Boar Boy");
+        Profile CombatUnit2 = profileRepository.getProfile("High Helm");
         Profile winner = combatUnit1;
         return winner;
     }
