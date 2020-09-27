@@ -1,7 +1,7 @@
 create table units (
     unit_id          INT  PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    race             TEXT UNIQUE NOT NULL,
-    name             TEXT NOT NULL,
+    race             TEXT NOT NULL,
+    name             TEXT UNIQUE NOT NULL,
     points_per_model INT,
     unit_size_min    INT,
     unit_size_max    INT
