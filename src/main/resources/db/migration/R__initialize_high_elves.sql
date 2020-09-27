@@ -21,7 +21,7 @@ INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) V
 INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Sisters of Avelorn', 14, 5, null);
 
 INSERT INTO profiles (unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
-    ((SELECT unit_id from units WHERE name='Spearmen'), 'Spearman', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
+    (SELECT unit_id from units WHERE name='Spearmen'), 'Spearman', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
     ((SELECT unit_id from units WHERE name='Spearmen'), 'Sentinel', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Infantry', 1),
     ((SELECT unit_id from units WHERE name='Archers'), 'Archer', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
     ((SELECT unit_id from units WHERE name='Archers'), 'Hawkeye', '5', 4, 5, 3, 3, 1, 5, '1', 8, 'Infantry', 1),
@@ -59,7 +59,7 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, wepon_skill, ba
     ((SELECT unit_id from units WHERE name='Flamespyre Phoenix'), 'Flamespyre Phoenix', '2', 5, 0, 5, 5, 5, 4, '3', 8, 'Monster', 1),
     ((SELECT unit_id from units WHERE name='Frostheart Phoenix'), 'Frostheart Phoenix', '2', 6, 0, 6, 6, 5, 3, '4', 9, 'Monster', 1),
     ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'Sister of Avelorn', '5', 5, 5, 3, 3, 1, 5, '1', 8, 'Infantry', null),
-    ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'High Sister', '5', 5, 6, 3, 3, 1, 5, '1', 8, 'Infantry', null));
+    ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'High Sister', '5', 5, 6, 3, 3, 1, 5, '1', 8, 'Infantry', null);
 
 
 
