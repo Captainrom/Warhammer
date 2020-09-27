@@ -20,8 +20,7 @@ INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) V
 INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Frostheart Phoenix', 240, 1, 1);
 INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Sisters of Avelorn', 14, 5, null);
 
-INSERT INTO profiles (unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit)
-VALUES (
+INSERT INTO profiles (unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
     ((SELECT unit_id from units WHERE name='Spearmen'), 'Spearman', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
     ((SELECT unit_id from units WHERE name='Spearmen'), 'Sentinel', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Infantry', 1),
     ((SELECT unit_id from units WHERE name='Archers'), 'Archer', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
@@ -29,9 +28,9 @@ VALUES (
     ((SELECT unit_id from units WHERE name='Lothern Sea Guard'), 'Sea Guard', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
     ((SELECT unit_id from units WHERE name='Lothern Sea Guard'), 'Sea Master', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Infantry', 1),
     ((SELECT unit_id from units WHERE name='Silver Helms'), 'Silver Helm', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Cavalry', null),
-    ((SELECT unit_id from units WHERE name='Silver Helms'), 'High Helm', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Cavalry', 1);
+    ((SELECT unit_id from units WHERE name='Silver Helms'), 'High Helm', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Cavalry', 1),
     ((SELECT unit_id from units WHERE name='Silver Helms'), 'Elven Steed', '9', 3, 0, 3, 3, 1, 4, '1', 5, 'NULL', null),
-    ((SELECT unit_id from units WHERE name='Ellyrian Reavers'), 'Ellyrian Reaver', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Cavalry', null)
+    ((SELECT unit_id from units WHERE name='Ellyrian Reavers'), 'Ellyrian Reaver', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Cavalry', null),
     ((SELECT unit_id from units WHERE name='Ellyrian Reavers'), 'Harbinger', '5', 4, 5, 3, 3, 1, 5, '2', 8, 'Cavalry', 1),
     ((SELECT unit_id from units WHERE name='Ellyrian Reavers'), 'Elven Steed', '9', 3, 0, 3, 3, 1, 4, '1', 5, 'NULL', null),
     ((SELECT unit_id from units WHERE name='Lion Chariot of Chrace'), 'Lion Chariot', 'NULL', null, null, 5, 4, 4, null, 'NULL', null, 'Chariot (Armour Save 4+)', 1),
@@ -60,8 +59,7 @@ VALUES (
     ((SELECT unit_id from units WHERE name='Flamespyre Phoenix'), 'Flamespyre Phoenix', '2', 5, 0, 5, 5, 5, 4, '3', 8, 'Monster', 1),
     ((SELECT unit_id from units WHERE name='Frostheart Phoenix'), 'Frostheart Phoenix', '2', 6, 0, 6, 6, 5, 3, '4', 9, 'Monster', 1),
     ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'Sister of Avelorn', '5', 5, 5, 3, 3, 1, 5, '1', 8, 'Infantry', null),
-    ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'High Sister', '5', 5, 6, 3, 3, 1, 5, '1', 8, 'Infantry', null)
-);
+    ((SELECT unit_id from units WHERE name='Sisters of Avelorn'), 'High Sister', '5', 5, 6, 3, 3, 1, 5, '1', 8, 'Infantry', null));
 
 
 
