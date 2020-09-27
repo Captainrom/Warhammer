@@ -1,4 +1,4 @@
-DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE race = 'Orcs & Goblins');
+/*DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE race = 'Orcs & Goblins');
 DELETE FROM units WHERE race = 'Orcs & Goblins';
 
 INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (1, 'Orcs & Goblins',  'Orc Boyz', 6, 10, null);
@@ -86,3 +86,4 @@ INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allo
 INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (57, 24, 'River Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', null);
 INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (58, 25, 'Giant', '6', 3, 3, 6, 5, 6, 3, 'special', 10, 'Monster', 1);
 
+*/
