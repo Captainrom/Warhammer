@@ -1,19 +1,19 @@
 package com.warhammer.docker.dockerspringboot.models;
 
 public class Unit {
-    private long unitID;
+    private long unit_id;
     private String race;
     private String name;
-    private long pointsPerModel;
-    private long unitSizeMin;
-    private long unitSizeMax;
+    private long points_per_model;
+    private long unit_size_min;
+    private long unit_size_max;
 
     public long getUnitID() {
-        return unitID;
+        return unit_id;
     }
 
     public void setUnitID(long value) {
-        this.unitID = value;
+        this.unit_id = value;
     }
 
     public String getRace() {
@@ -33,31 +33,26 @@ public class Unit {
     }
 
     public long getPointsPerModel() {
-        return pointsPerModel;
+        return points_per_model;
     }
 
     public void setPointsPerModel(long value) {
-        this.pointsPerModel = value;
+        this.points_per_model = value;
     }
 
     public long getUnitSizeMin() {
-        return unitSizeMin;
+        return unit_size_min;
     }
 
     public void setUnitSizeMin(long value) {
-        this.unitSizeMin = value;
+        this.unit_size_min = value;
     }
 
     public long getUnitSizeMax() {
-        return unitSizeMax;
+        return unit_size_max;
     }
 
     public void setUnitSizeMax(long value) {
-        this.unitSizeMax = value;
-    }
-
-    @Override
-    public String toString() {
-        return "Uniname";
+        this.unit_size_max = value;
     }
 }

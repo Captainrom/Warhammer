@@ -12,7 +12,7 @@ create table profiles (
     unit_id            INT,
     profile_name       TEXT NOT NULL,
     movement_allowance varchar(10),
-    wepon_skill        INT,
+    weapon_skill        INT,
     ballistic_skill    INT,
     strength           INT,
     toughness          INT,
@@ -26,3 +26,8 @@ create table profiles (
 );
 
 create index unit_id on profiles (unit_id);
+
+create table factions (
+    faction_id          INT  PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    faction             TEXT NOT NULL
+);
