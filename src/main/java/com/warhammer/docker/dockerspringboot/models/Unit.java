@@ -4,6 +4,7 @@ public class Unit {
     private long unit_id;
     private String race;
     private String name;
+    private String type;
     private long points_per_model;
     private long unit_size_min;
     private long unit_size_max;
@@ -30,6 +31,14 @@ public class Unit {
 
     public void setName(String value) {
         this.name = value;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public long getPointsPerModel() {

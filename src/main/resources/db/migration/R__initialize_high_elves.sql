@@ -1,24 +1,25 @@
 DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE race = 'High Elves');
 DELETE FROM units WHERE race = 'High Elves';
 
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Spearmen', 9, 10, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Archers', 10, 10, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Lothern Sea Guard', 11, 10, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Silver Helms', 21, 5, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Ellyrian Reavers', 16, 5, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Lion Chariot of Chrace', 120, 1, 1);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'White Lions of Chrace', 13, 10, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Swordmasters Of Hoeth', 13, 5, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Shadow Warriors', 14, 5, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Phoenix Guard', 15, 10, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Dragon Princes of Caledor', 29, 5, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Lothern Skycutter', 95, 1, 1);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Tiranoc Chariot', 70, 1, 3);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Eagle Claw Bolt Thrower', 70, 1, 1);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Great Eagles', 50, 1, null);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Flamespyre Phoenix', 225, 1, 1);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Frostheart Phoenix', 240, 1, 1);
-INSERT INTO units (race, name, points_per_model, unit_size_min, unit_size_max) VALUES ('High Elves', 'Sisters of Avelorn', 14, 5, null);
+INSERT INTO units (race, name, type, points_per_model, unit_size_min, unit_size_max) VALUES
+    ('High Elves', 'Spearmen', 'core', 9, 10, null),
+    ('High Elves', 'Archers', 'core', 10, 10, null),
+    ('High Elves', 'Lothern Sea Guard', 'core', 11, 10, null),
+    ('High Elves', 'Silver Helms', 'core',21, 5, null),
+    ('High Elves', 'Ellyrian Reavers','core', 16, 5, null),
+    ('High Elves', 'Lion Chariot of Chrace','core', 120, 1, 1),
+    ('High Elves', 'White Lions of Chrace','core', 13, 10, null),
+    ('High Elves', 'Swordmasters Of Hoeth','core', 13, 5, null),
+    ('High Elves', 'Shadow Warriors','core', 14, 5, null),
+    ('High Elves', 'Phoenix Guard','core', 15, 10, null),
+    ('High Elves', 'Dragon Princes of Caledor','core', 29, 5, null),
+    ('High Elves', 'Lothern Skycutter','core', 95, 1, 1),
+    ('High Elves', 'Tiranoc Chariot','core', 70, 1, 3),
+    ('High Elves', 'Eagle Claw Bolt Thrower','core', 70, 1, 1),
+    ('High Elves', 'Great Eagles','core', 50, 1, null),
+    ('High Elves', 'Flamespyre Phoenix','core', 225, 1, 1),
+    ('High Elves', 'Frostheart Phoenix','core', 240, 1, 1),
+    ('High Elves', 'Sisters of Avelorn','core', 14, 5, null);
 
 INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
     (SELECT unit_id from units WHERE name='Spearmen'), 'Spearman', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),

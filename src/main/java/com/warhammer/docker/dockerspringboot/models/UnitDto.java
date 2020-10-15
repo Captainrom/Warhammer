@@ -3,6 +3,7 @@ package com.warhammer.docker.dockerspringboot.models;
 public class UnitDto {
     private String profile_name;
     private String name;
+    private String type;
     private long points_per_model;
     private long unit_size_min;
     private long unit_size_max;
@@ -32,6 +33,14 @@ public class UnitDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public long getPoints_per_model() {
