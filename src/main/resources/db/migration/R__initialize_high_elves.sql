@@ -21,7 +21,7 @@ INSERT INTO units (race, name, type, points_per_model, unit_size_min, unit_size_
     ('High Elves', 'Frostheart Phoenix','core', 240, 1, 1),
     ('High Elves', 'Sisters of Avelorn','core', 14, 5, null);
 
-INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
+INSERT INTO profiles (unit_id, name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
     (SELECT unit_id from units WHERE name='Spearmen'), 'Spearman', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
     ((SELECT unit_id from units WHERE name='Spearmen'), 'Sentinel', '5', 4, 4, 3, 3, 1, 5, '2', 8, 'Infantry', 1),
     ((SELECT unit_id from units WHERE name='Archers'), 'Archer', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null),
