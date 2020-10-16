@@ -4,7 +4,7 @@ public class Profile {
 
         private long profile_id;
         private long unit_id;
-        private String name;
+        private String profile_name;
         private int movement_allowance;
         private int weapon_skill;
         private int ballistic_skill;
@@ -33,12 +33,12 @@ public class Profile {
             this.unit_id = unit_id;
         }
 
-        public String getName() {
-            return name;
+        public String getProfile_name() {
+            return profile_name;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setProfile_name(String profile_name) {
+            this.profile_name = profile_name;
         }
 
         public int getMovement_allowance() {
