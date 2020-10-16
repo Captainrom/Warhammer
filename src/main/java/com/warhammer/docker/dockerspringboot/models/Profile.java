@@ -33,12 +33,12 @@ public class Profile {
             this.unit_id = unit_id;
         }
 
-        public String getProfile_name() {
+        public String getName() {
             return name;
         }
 
-        public void setProfile_name(String profile_name) {
-            this.name = profile_name;
+        public void setName(String name) {
+            this.name = name;
         }
 
         public int getMovement_allowance() {
