@@ -1,7 +1,7 @@
 create table units (
     unit_id          INT  PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    race             TEXT NOT NULL,
-    name             TEXT UNIQUE NOT NULL,
+    faction          TEXT NOT NULL,
+    unit_name             TEXT UNIQUE NOT NULL,
     type             TEXT NOT NULL,
     points_per_model INT,
     unit_size_min    INT,
@@ -12,7 +12,7 @@ create table units (
 create table profiles (
     profile_id         INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     unit_id            INT,
-    name       TEXT NOT NULL,
+    profile_name       TEXT NOT NULL,
     movement_allowance varchar(10),
     weapon_skill        INT,
     ballistic_skill    INT,
