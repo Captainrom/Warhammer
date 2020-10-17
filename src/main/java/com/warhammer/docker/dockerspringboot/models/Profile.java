@@ -17,51 +17,51 @@ public class Profile {
         private String troop_type;
         private int max_per_unit;
 
-        public long getProfile_id() {
+        public long getProfileId() {
             return profile_id;
         }
 
-        public void setProfile_id(long profile_id) {
+        public void setProfileId(long profile_id) {
             this.profile_id = profile_id;
         }
 
-        public long getUnit_id() {
+        public long getUnitId() {
             return unit_id;
         }
 
-        public void setUnit_id(long unit_id) {
+        public void setUnitId(long unit_id) {
             this.unit_id = unit_id;
         }
 
-        public String getProfile_name() {
+        public String getProfileName() {
             return profile_name;
         }
 
-        public void setProfile_name(String profile_name) {
+        public void setProfileName(String profile_name) {
             this.profile_name = profile_name;
         }
 
-        public int getMovement_allowance() {
+        public int getMovementAllowance() {
             return movement_allowance;
         }
 
-        public void setMovement_allowance(int movement_allowance) {
+        public void setMovementAllowance(int movement_allowance) {
             this.movement_allowance = movement_allowance;
         }
 
-        public int getWepon_skill() {
+        public int getWeponSkill() {
             return weapon_skill;
         }
 
-        public void setWepon_skill(int wepon_skill) {
+        public void setWeponSkill(int wepon_skill) {
             this.weapon_skill = wepon_skill;
         }
 
-        public int getBallistic_skill() {
+        public int getBallisticSkill() {
             return ballistic_skill;
         }
 
-        public void setBallistic_skill(int ballistic_skill) {
+        public void setBallisticSkill(int ballistic_skill) {
             this.ballistic_skill = ballistic_skill;
         }
 
@@ -113,19 +113,19 @@ public class Profile {
             this.leadership = leadership;
         }
 
-        public String getTroop_type() {
+        public String getTroopType() {
             return troop_type;
         }
 
-        public void setTroop_type(String troop_type) {
+        public void setTroopType(String troop_type) {
             this.troop_type = troop_type;
         }
 
-        public int getMax_per_unit() {
+        public int getMaxPerUnit() {
             return max_per_unit;
         }
 
-        public void setMax_per_unit(int max_per_unit) {
+        public void setMaxPerUnit(int max_per_unit) {
             this.max_per_unit = max_per_unit;
         }
 

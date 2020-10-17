@@ -2,8 +2,8 @@ package com.warhammer.docker.dockerspringboot.models;
 
 public class Unit {
     private long unit_id;
-    private String race;
-    private String name;
+    private String faction;
+    private String Unit_name;
     private String type;
     private long points_per_model;
     private long unit_size_min;
@@ -17,20 +17,20 @@ public class Unit {
         this.unit_id = value;
     }
 
-    public String getRace() {
-        return race;
+    public String getFaction() {
+        return faction;
     }
 
-    public void setRace(String value) {
-        this.race = value;
+    public void setFaction(String value) {
+        this.faction = value;
     }
 
-    public String getName() {
-        return name;
+    public String getUnitName() {
+        return Unit_name;
     }
 
-    public void setName(String value) {
-        this.name = value;
+    public void setUnitName(String value) {
+        this.Unit_name = value;
     }
 
     public String getType() {
