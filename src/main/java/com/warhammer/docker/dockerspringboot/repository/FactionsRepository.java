@@ -38,7 +38,7 @@ public class FactionsRepository {
 
 
     public List<UnitDto> getUnit(String faction, String unit) {
-        String sql = "SELECT unit_name, profile_name, points_per_model, unit_size_min, unit_size_max, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit FROM units INNER JOIN profiles ON (units.unit_id = profiles.unit_id) WHERE race = :faction AND units.name = :unit";
+        String sql = "SELECT unit_name, profile_name, points_per_model, unit_size_min, unit_size_max, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit FROM units INNER JOIN profiles ON (units.unit_id = profiles.unit_id) WHERE faction = :faction AND units.unit_name = :unit";
         try(Connection con = sql2o.open()) {
             return con.createQuery(sql)
                     .addParameter("faction", faction)
