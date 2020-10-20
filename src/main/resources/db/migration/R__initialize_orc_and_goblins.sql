@@ -1,89 +1,32 @@
-/*DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE race = 'Orcs & Goblins');
-DELETE FROM units WHERE race = 'Orcs & Goblins';
+DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 'Orcs & Goblins');
+DELETE FROM units WHERE faction = 'Orcs & Goblins';
 
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (1, 'Orcs & Goblins',  'Orc Boyz', 6, 10, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (2, 'Orcs & Goblins', 'Orc Arrer Boyz', 7, 10, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (3, 'Orcs & Goblins', 'Savage Orcs', 8, 10, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (4, 'Orcs & Goblins', 'Goblins', 3, 20, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (5, 'Orcs & Goblins', 'Goblins Wolf Riders', 10, 5, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (6, 'Orcs & Goblins', 'Night Goblins', 3, 20, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (7, 'Orcs & Goblins', 'Forest Goblin Spider Riders', 13, 5, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (8, 'Orcs & Goblins', 'Black Orcs', 12, 10, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (9, 'Orcs & Goblins', 'Orc Boar Boyz', 16, 5, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (10, 'Orcs & Goblins', 'Savage Orc Boar Boyz', 18, 5, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (11, 'Orcs & Goblins', 'Orc Boar Chariot', 85, 1, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (12, 'Orcs & Goblins', 'Goblin Wolf Chariot', 50, 1, 3);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (13, 'Orcs & Goblins', 'Goblin Spear Chukka', 35, 1, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (14, 'Orcs & Goblins', 'Night Goblin Squig Hoppers', 12, 5, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (15, 'Orcs & Goblins', 'Night Goblin Squig Herd', 27, 10, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (16, 'Orcs & Goblins', 'Snotlings', 30, 2, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (17, 'Orcs & Goblins', 'Trolls', 35, 1, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (18, 'Orcs & Goblins', 'Goblin Rock Lobber', 85, 1, 1);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (19, 'Orcs & Goblins', 'Doom Diver Catapult', 80, 1, 1);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (20, 'Orcs & Goblins', 'Snotling Pump Wagon', 45, 1, 1);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (21, 'Orcs & Goblins', 'Arachnarok Spider', 290, 1, 1);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (22, 'Orcs & Goblins', 'Mangler Squigs', 65, 1, 1);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (23, 'Orcs & Goblins', 'Stone Trolls', 45, 1, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (24, 'Orcs & Goblins', 'River Trolls', 45, 1, null);
-INSERT INTO warhammer.units (unit_id, race, name, points_per_model, unit_size_min, unit_size_max) VALUES (25, 'Orcs & Goblins', 'Giant', 200, 1, 1);
+INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, unit_size_max) VALUES
+    ('Orcs & Goblins', 'Orc Boyz' ,'Core' , 6, 10, null),
+    ('Orcs & Goblins', 'Orc Arrer Boyz','Core' , 7, 10, null),
+    ('Orcs & Goblins', 'Savage Orcs','Core' , 8, 10, null),
+    ('Orcs & Goblins', 'Goblins','Core' , 3, 20, null),
+    ('Orcs & Goblins', 'Goblins Wolf Riders','Core' , 10, 5, null),
+    ('Orcs & Goblins', 'Night Goblins','Core' , 3, 20, null),
+    ('Orcs & Goblins', 'Forest Goblin Spider Riders','Core' , 13, 5, null),
+    ('Orcs & Goblins', 'Black Orcs','Core' , 12, 10, null),
+    ('Orcs & Goblins', 'Orc Boar Boyz','Core' , 16, 5, null),
+    ('Orcs & Goblins', 'Savage Orc Boar Boyz','Core' , 18, 5, null),
+    ('Orcs & Goblins', 'Orc Boar Chariot','Core' , 85, 1, null),
+    ('Orcs & Goblins', 'Goblin Wolf Chariot','Core' , 50, 1, 3),
+    ('Orcs & Goblins', 'Goblin Spear Chukka','Core' , 35, 1, null),
+    ('Orcs & Goblins', 'Night Goblin Squig Hoppers','Core' , 12, 5, null),
+    ('Orcs & Goblins', 'Night Goblin Squig Herd','Core' , 27, 10, null),
+    ('Orcs & Goblins', 'Snotlings','Core' , 30, 2, null),
+    ('Orcs & Goblins', 'Trolls','Core' , 35, 1, null),
+    ('Orcs & Goblins', 'Goblin Rock Lobber','Core' , 85, 1, 1),
+    ('Orcs & Goblins', 'Doom Diver Catapult','Core' , 80, 1, 1),
+    ('Orcs & Goblins', 'Snotling Pump Wagon','Core' , 45, 1, 1),
+    ('Orcs & Goblins', 'Arachnarok Spider','Core' , 290, 1, 1),
+    ('Orcs & Goblins', 'Mangler Squigs','Core' , 65, 1, 1),
+    ('Orcs & Goblins', 'Stone Trolls','Core' , 45, 1, null),
+    ('Orcs & Goblins', 'River Trolls','Core' , 45, 1, null),
+    ('Orcs & Goblins', 'Giant','Core' , 200, 1, 1);
 
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (1, 1, 'Orc Boy', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (2, 1, 'Orc Big''Un', '4', 4, 3, 4, 4, 1, 2, '1', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (3, 1, 'Orc Boss', '4', 4, 3, 4, 4, 1, 2, '2', 7, 'Infantry', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (4, 2, 'Orc Arrer Boy', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (5, 2, 'Orc Arrer Boy Boss', '4', 3, 4, 4, 4, 1, 2, '1', 7, 'Infantry', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (6, 3, 'Savage Orc', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (7, 3, 'Savage Orc Big ''Un', '4', 4, 3, 4, 4, 1, 2, '1', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (8, 3, 'Savage Orc Boss', '4', 4, 3, 4, 4, 1, 2, '2', 7, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (9, 4, 'Goblin', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (10, 4, 'Goblin Boss', '4', 2, 3, 3, 3, 1, 2, '2', 6, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (11, 4, 'Nasty Skulker', '4', 2, 3, 3, 3, 1, 2, '2', 6, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (12, 5, 'Goblin Wolf Rider', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (13, 5, 'Goblin Wolf Rider Boss', '4', 2, 3, 3, 3, 1, 2, '2', 6, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (14, 5, 'Giant Wolf', '9', 3, 0, 3, 3, 1, 3, '1', 3, 'NULL', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (15, 6, 'Night Goblin', '4', 2, 3, 3, 3, 1, 3, '1', 5, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (16, 6, 'Night Goblin Boss', '4', 2, 3, 3, 3, 1, 3, '2', 5, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (17, 6, 'Night Goblin Fanatic', '2D6', null, null, 5, 3, 1, 3, '*', 10, 'Unique', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (18, 7, 'Spider Rider', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (19, 7, 'Spider Rider Boss', '4', 2, 3, 3, 3, 1, 2, '2', 6, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (20, 7, 'Giant Spider', '7', 3, 0, 3, 3, 1, 4, '1', 2, 'NULL', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (21, 8, 'Black Orc', '4', 4, 3, 4, 4, 1, 2, '1', 8, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (22, 8, 'Black Orc Boss', '4', 5, 3, 4, 4, 1, 2, '2', 8, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (23, 9, 'Orc Boar Boy', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (24, 9, 'Orc Boar Boy Big ''Un', '4', 4, 3, 4, 4, 1, 2, '1', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (25, 9, 'Orc Boar Boss', '4', 4, 3, 4, 4, 1, 2, '2', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (26, 9, 'War Boar', '7', 3, 0, 3, 4, 1, 3, '1', 3, null, null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (27, 10, 'Savage Orc Boar Boy', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (28, 10, 'Savage Orc Boar Boy Big ''Un', '4', 4, 3, 4, 4, 1, 2, '1', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (29, 10, 'Savage Orc Boar Boss', '4', 4, 3, 4, 4, 1, 2, '2', 7, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (30, 10, 'War Boar', '7', 3, 0, 3, 4, 1, 3, '1', 3, 'NULL', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (31, 11, 'Chariot', 'NULL', null, null, 5, 5, 4, null, null, null, 'Chariot (Armour Save 4+)', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (32, 11, 'Orc Crew', 'NULL', 3, 3, 3, null, null, 2, '1', 7, 'NULL', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (33, 11, 'War Boar', '7', 3, null, 3, null, null, 3, '1', null, 'NULL', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (34, 12, 'Chariot', 'NULL', null, null, 5, 4, 3, null, null, null, 'Chariot (Armour Save 5+)', 3);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (35, 12, 'Goblin Crew', 'NULL', 2, 3, 3, null, null, 2, '1', 6, 'NULL', 3);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (36, 12, 'Giant Wolf', '9', 3, null, 3, null, null, 3, '1', null, 'NULL', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (37, 13, 'Spear Chukka', 'NULL', null, null, null, 7, 3, null, null, null, 'War Machine (Bolt Thower)', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (38, 13, 'Goblin Crew', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'NULL', 3);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (39, 13, 'Orc Bully', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'NULL', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (40, 14, 'Squig Hopper', '4', 2, 3, 3, 3, 1, 3, '1', 5, 'Cavalry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (41, 14, 'Squig', '3D6', 4, 0, 5, 3, 1, 3, '2', 3, 'NULL', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (42, 15, 'Night Goblin Herder', '4', 2, 3, 3, 3, 1, 3, '1', 5, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (43, 15, 'Cave Squig', '4', 4, 0, 5, 3, 1, 3, '2', 3, 'Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (44, 16, 'Snotlings', '4', 2, 0, 2, 2, 5, 3, '5', 4, 'Swarm', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (45, 17, 'Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (46, 18, 'Rock Lobber', 'NULL', null, null, null, 7, 3, null, null, null, 'War Machine (Stone Thrower)', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (47, 18, 'Goblin Crew', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'NULL', 3);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (48, 18, 'Orc Bully', '4', 2, 3, 3, 4, 1, 2, '1', 7, 'NULL', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (49, 19, 'Catapult', 'NULL', null, null, null, 7, 3, null, null, null, 'War Machine (Stone Thrower)', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (50, 19, 'Goblin Crew', '4', 2, 3, 3, 3, 1, 2, '1', 6, 'NULL', 3);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (51, 20, 'Snotling Pump Wagon', '2D6', null, null, 4, 4, 3, null, null, null, 'Chariot (Armour Save 6+)', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (52, 20, 'Snotling Crew', 'NULL', 2, 0, 2, null, null, 3, '5', 4, 'NULL', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (53, 21, 'Arachnarok Spider', '7', 4, null, 5, 6, 8, 4, '8', null, 'Monster', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (54, 21, 'Forest Goblin Crew', 'NULL', 2, 3, 3, null, null, 2, '1', 6, 'NULL', 8);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (55, 22, 'Mangler Squigs', '3D6', null, null, 6, 4, 3, 3, '*', 3, 'Unique', 1);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (56, 23, 'Stone Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (57, 24, 'River Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', null);
-INSERT INTO warhammer.profiles (profile_id, unit_id, profile_name, movement_allowance, wepon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (58, 25, 'Giant', '6', 3, 3, 6, 5, 6, 3, 'special', 10, 'Monster', 1);
-
-*/
+INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
+    (SELECT unit_id from units WHERE unit_name = 'Orc Boyz'), 'Orc Boyz', '4', 3, 3, 3, 4, 1, 2, '1', 7, 'Infantry', null);
