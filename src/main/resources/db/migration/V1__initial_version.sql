@@ -1,7 +1,7 @@
 create table units (
     unit_id          INT  PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     faction          TEXT NOT NULL,
-    unit_name        TEXT UNIQUE NOT NULL,
+    unit_name        TEXT NOT NULL,
     type             TEXT NOT NULL,
     points_per_model INT,
     unit_size_min    INT,
