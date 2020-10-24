@@ -27,7 +27,7 @@ public class FactionsRepository {
     }
 
     public List<Unit> getFaction(String faction){
-        String sql = "SELECT * FROM units WHERE faction = :faction ORDER BY unit_name ASC";
+        String sql = "SELECT * FROM units WHERE faction = :faction ORDER BY unit_id ASC";
 
         try(Connection con = sql2o.open()) {
             return con.createQuery(sql)
