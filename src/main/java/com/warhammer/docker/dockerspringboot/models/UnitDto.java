@@ -31,7 +31,7 @@ public class UnitDto {
         return unit_name;
     }
 
-    public void setUnit_name(String Unit_name) {
+    public void setUnit_name(String unit_name) {
         this.unit_name = unit_name;
     }
 
