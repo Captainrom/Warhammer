@@ -2,8 +2,61 @@ DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 
 DELETE FROM units WHERE faction = 'Chaos Dwarf';
 
 INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, unit_size_max) VALUES
-    ('Chaos Dwarf', 'CD', 'core', 9, 10, null);
-
+    ('Chaos Dwarf', 'Drazhoath the Ashen, Prohet of Hashut', 'Lords', 570, 1, 1),
+    ('Chaos Dwarf', 'Sorcerer-Prophet', 'Lords', 265, 1, 1),
+    ('Chaos Dwarf', 'Daemonsmith Sorcerer', 'Heroes', 95, 1, 1),
+    ('Chaos Dwarf', 'Infernal Castellan', 'Heroes', 105, 1, 1),
+    ('Chaos Dwarf', 'Hobgoblin Khan', 'Heroes', 40, 1, 1),
+    ('Chaos Dwarf', 'Bull Centaur Taur´ruk', 'Heroes', 155, 1, 1),
+    ('Chaos Dwarf', 'Chaos Dwarf Infernal Guard', 'Core', 12, 10, 100),
+    ('Chaos Dwarf', 'Hobgoblin Cutthroats', 'Core', 4, 20, 100),
+    ('Chaos Dwarf', 'Chaos Dwarf Infernal Ironsworn', 'Special', 17, 10, 100),
+    ('Chaos Dwarf', 'Bull Centaur Renders', 'Special', 40, 3, 30),
+    ('Chaos Dwarf', 'Kdaai Fireborn', 'Special', 55, 3, 30),
+    ('Chaos Dwarf', 'Magma Cannon', 'Special', 145, 1, 1),
+    ('Chaos Dwarf', 'Deathshrieker Rocket Launcher', 'Special', 100, 1, 1),
+    ('Chaos Dwarf', 'Iron Daemon War Engine', 'Special', 285, 1, 1),
+    ('Chaos Dwarf', 'Hobgoblin Wolf Riders', 'Rare', 12, 5, 50),
+    ('Chaos Dwarf', 'Dreadquake Mortar', 'Rare', 195, 1, 1),
+    ('Chaos Dwarf', 'Kdaai Destroyer', 'Rare', 325, 1, 1),
+    ('Chaos Dwarf', 'Hellcannon', 'Rare', 205, 1, 1),
+    ('Chaos Dwarf', 'Chaos Siege Giant', 'Rare', 275, 1, 1);
 
 INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
-    (SELECT unit_id from units WHERE unit_name ='CD'), 'CD', '5', 4, 4, 3, 3, 1, 5, '1', 8, 'Infantry', null);
+    (SELECT unit_id from units WHERE unit_name ='Drazhoath the Ashen, Prohet of Hashut'), 'Drazhoath', '3', 6, 4, 4, 5, 4, 2, '3', 10, 'Drazhoath(Infantry, Special Character)', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Drazhoath the Ashen, Prohet of Hashut'), 'Cinderbreath', '6', 5, 0, 6, 6, 5, 3, '4', 6, 'Cinderbreath(Monster)', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Sorcerer-Prophet'), 'Sorcerer-Prophet', '3', 5, 4, 4, 5, 3, 2, '3', 10, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Sorcerer-Prophet'), 'Great Taurus', '6', 5, 0, 6, 5, 4, 3, '4', 6, 'Monster', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Sorcerer-Prophet'), 'Bale Taurus', '6', 5, 0, 6, 6, 5, 3, '4', 6, 'Monster', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Daemonsmith Sorcerer'), 'Daemonsmith Sorcerer', '3', 4, 4, 4, 4, 2, 2, '2', 9, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Infernal Castellan'), 'Infernal Castellan', '3', 6, 4, 4, 5, 2, 3, '3', 9, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Khan'), 'Hobgoblin Khan', '4', 4, 3, 4, 4, 2, 4, '3', 7, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Bull Centaur Taur´ruk'), 'Taur´ruk', '7', 5, 2, 5, 5, 4, 4, '4', 9, 'Monstrous Beast', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Chaos Dwarf Infernal Guard'), 'Infernal', '3', 4, 3, 4, 4, 1, 2, '1', 9, 'Infantry', 10),
+    ((SELECT unit_id from units WHERE unit_name ='Chaos Dwarf Infernal Guard'), 'Deathmask', '3', 5, 3, 4, 4, 1, 2, '2', 9, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Cutthroats'), 'Cutthroats', '4', 3, 3, 3, 3, 1, 2, '1', 6, 'Infantry', 20),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Cutthroats'), 'Murder Boss', '4', 3, 3, 3, 3, 1, 3, '2', 6, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Chaos Dwarf Infernal Ironsworn'), 'Infernal Ironsworn', '3', 5, 3, 4, 4, 1, 2, '1', 9, 'Infantry', 10),
+    ((SELECT unit_id from units WHERE unit_name ='Chaos Dwarf Infernal Ironsworn'), 'Deathmask', '3', 5, 3, 4, 4, 1, 2, '2', 9, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Bull Centaur Renders'), 'Bull Centaur Render', '7', 4, 2, 4, 5, 3, 3, '2', 8, 'Monstrous Beast', 3),
+    ((SELECT unit_id from units WHERE unit_name ='Bull Centaur Renders'), 'Bull Centaur Ba´hal', '7', 4, 2, 4, 5, 3, 3, '3', 8, 'Monstrous Beast', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Kdaai Fireborn'), 'Kdaai Fireborn', '6', 4, 2, 5, 4, 2, 4, '2', 7, 'Monstrous Infantry', 3),
+    ((SELECT unit_id from units WHERE unit_name ='Kdaai Fireborn'), 'Kdaai Manburner', '6', 4, 2, 5, 4, 2, 4, '3', 7, 'Monstrous Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Magma Cannon'), 'Magma Cannon', null, null, null, null, 7, 3, null, null, null, 'War Machine', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Magma Cannon'), 'Chaos Dwarf Crew', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Deathshrieker Rocket Launcher'), 'Rocket Battery', null, null, null, null, 7, 3, null, null, null, 'War Machine', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Deathshrieker Rocket Launcher'), 'Chaos Dwarf', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Iron Daemon War Engine'), 'Iron Daemon', '6', null, null, 8, 7, 7, null, null, null, 'Unique unit', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Iron Daemon War Engine'), 'Chaos Dwarf Crew', null, 4, 3, 3, null, null, 2, '3', 9, '', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Wolf Riders'), 'Raider', '4', 3, 3, 3, 3, 1, 2, '1', 6, 'Cavalry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Wolf Riders'), 'Wolf Boss', '4', 3, 3, 3, 3, 1, 3, '2', 6, 'Cavalry', 20),
+    ((SELECT unit_id from units WHERE unit_name ='Hobgoblin Wolf Riders'), 'Giant Wolf', '9', 3, 0, 3, 3, 1, 3, '1', 3, '-', 20),
+    ((SELECT unit_id from units WHERE unit_name ='Dreadquake Mortar'), 'Mortar', null, null, null, null, 7, 3, null, null, null, 'War Machine', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Dreadquake Mortar'), 'Chaos Dwarf', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Dreadquake Mortar'), 'Slave Ogre', '6', 3, 2, 4, 4, 3, 2, '3', 7, '-', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Kdaai Destroyer'), 'Kdaai Destroyer', '9', 5, 3, 7, 6, 6, 5, '6', 8, 'Infantry', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hellcannon'), 'Hellcannon', '3', 4, 3, 5, 6, 5, 1, '5', 4, 'Monster', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hellcannon'), 'Chaos Dwarf Handlers', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 3),
+    ((SELECT unit_id from units WHERE unit_name ='Chaos Siege Giant'), 'Chaos Siege Giant', '5', 4, 3, 6, 5, 6, 3, 'Special', 10, 'Monster', 1);
+
+
