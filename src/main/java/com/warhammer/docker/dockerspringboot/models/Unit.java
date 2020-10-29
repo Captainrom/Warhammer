@@ -3,7 +3,7 @@ package com.warhammer.docker.dockerspringboot.models;
 public class Unit {
     private long unit_id;
     private String faction;
-    private String Unit_name;
+    private String unit_name;
     private String type;
     private long points_per_model;
     private long unit_size_min;
@@ -26,11 +26,11 @@ public class Unit {
     }
 
     public String getUnitName() {
-        return Unit_name;
+        return unit_name;
     }
 
     public void setUnitName(String value) {
-        this.Unit_name = value;
+        this.unit_name = value;
     }
 
     public String getType() {
