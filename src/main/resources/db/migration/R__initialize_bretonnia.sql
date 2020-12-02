@@ -19,7 +19,6 @@ INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, un
     ('Bretonnia', 'Grail Knights', 'Rare', 38, 3, 12),
     ('Bretonnia', 'Field Trebuchet', 'Rare', 90, 1, 5);
 
-
 INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
     (SELECT unit_id from units WHERE unit_name ='Bretonnian Lord'), 'Lord', '4', 6, 3, 4, 4, 3, 6, '4', 9, 'Cavalry(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord'), 'Bretonnian Warhorse', '8', 3, 0, 3, 3, 1, 3, '1', 5, 'Cavalry(Character)', 1),

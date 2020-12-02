@@ -6,13 +6,13 @@ public class Profile {
         private long unit_id;
         private String profile_name;
         private int movement_allowance;
-        private int weapon_skill;
+        private String weapon_skill;
         private int ballistic_skill;
         private int strength;
         private int toughness;
         private int wounds;
         private int initiative;
-        private int attacks;
+        private String attacks;
         private int leadership;
         private String troop_type;
         private int max_per_unit;
@@ -49,11 +49,11 @@ public class Profile {
             this.movement_allowance = movement_allowance;
         }
 
-        public int getWeponSkill() {
+        public String getWeponSkill() {
             return weapon_skill;
         }
 
-        public void setWeponSkill(int wepon_skill) {
+        public void setWeponSkill(String wepon_skill) {
             this.weapon_skill = wepon_skill;
         }
 
@@ -97,11 +97,11 @@ public class Profile {
             this.initiative = initiative;
         }
 
-        public int getAttacks() {
+        public String getAttacks() {
             return attacks;
         }
 
-        public void setAttacks(int attacks) {
+        public void setAttacks(String attacks) {
             this.attacks = attacks;
         }
 

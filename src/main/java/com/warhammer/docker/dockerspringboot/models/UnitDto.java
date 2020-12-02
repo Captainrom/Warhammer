@@ -8,13 +8,13 @@ public class UnitDto {
     private long unit_size_min;
     private long unit_size_max;
     private int movement_allowance;
-    private int weapon_skill;
+    private String weapon_skill;
     private int ballistic_skill;
     private int strength;
     private int toughness;
     private int wounds;
     private int initiative;
-    private int attacks;
+    private String attacks;
     private int leadership;
     private String troop_type;
     private int max_per_unit;
@@ -75,11 +75,11 @@ public class UnitDto {
         this.movement_allowance = movement_allowance;
     }
 
-    public int getWeapon_skill() {
+    public String getWeapon_skill() {
         return weapon_skill;
     }
 
-    public void setWeapon_skill(int weapon_skill) {
+    public void setWeapon_skill(String weapon_skill) {
         this.weapon_skill = weapon_skill;
     }
 
@@ -123,11 +123,11 @@ public class UnitDto {
         this.initiative = initiative;
     }
 
-    public int getAttacks() {
+    public String getAttacks() {
         return attacks;
     }
 
-    public void setAttacks(int attacks) {
+    public void setAttacks(String attacks) {
         this.attacks = attacks;
     }
 
