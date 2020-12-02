@@ -92,7 +92,7 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Tiranoc Chariot'), 'Elven Steed', '9', 3, null, 3, null, null, 4, '1', null, null, 2),
     ((SELECT unit_id from units WHERE unit_name ='Eagle Claw Bolt Thrower'), 'Eagle Claw Bolt Thrower', null, null, null, null, 7, 2, null, null, null, 'War Machine(Bolt Thrower)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Eagle Claw Bolt Thrower'), 'Sea Guard Crew', '5', 4, 4, 3, 3, 1, 5, '1', 8, null, 2),
-    ((SELECT unit_id from units WHERE unit_name ='Great Eagles'), 'Great Eagle', '2', 5, 0, 4, 4, 3, 4, '2', 8, 'Monstrous Beast', 10),
+    ((SELECT unit_id from units WHERE unit_name ='Great Eagles' AND faction = 'High Elves'), 'Great Eagle', '2', 5, 0, 4, 4, 3, 4, '2', 8, 'Monstrous Beast', 10),
     ((SELECT unit_id from units WHERE unit_name ='Flamespyre Phoenix'), 'Flamespyre Phoenix', '2', 5, 0, 5, 5, 5, 4, '3', 8, 'Monster', 1),
     ((SELECT unit_id from units WHERE unit_name ='Frostheart Phoenix'), 'Frostheart Phoenix', '2', 6, 0, 6, 6, 5, 3, '4', 9, 'Monster', 1),
     ((SELECT unit_id from units WHERE unit_name ='Sisters of Avelorn'), 'Sister of Avelorn', '5', 5, 5, 3, 3, 1, 5, '1', 8, 'Infantry', 50),

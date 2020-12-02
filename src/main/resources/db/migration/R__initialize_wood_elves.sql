@@ -10,7 +10,6 @@ INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, un
     ('Wood Elves', 'Treeman Ancient','Lords', 290, 1, 1),
     ('Wood Elves', 'Drycha','Heroes', 255, 1, 1),
     ('Wood Elves', 'Naestra & Arahan','Heroes', 275, 1, 1),
-    ('Wood Elves', 'Loremaster of Hoeth','Heroes', 230, 1, 1),
     ('Wood Elves', 'Glade Captain','Heroes', 75, 1, 1),
     ('Wood Elves', 'Spellsinger','Heroes', 80, 1, 1),
     ('Wood Elves', 'Shadowdancer','Heroes', 100, 1, 1),
@@ -28,7 +27,7 @@ INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, un
     ('Wood Elves', 'Sisters of the Thorn','Special', 26, 5, 50),
     ('Wood Elves', 'Wild Riders','Special', 26, 5, 50),
     ('Wood Elves', 'Waywatchers','Rare', 20, 5, 50),
-    ('Wood Elves', 'Great Eagle','Rare', 50, 1, 10),
+    ('Wood Elves', 'Great Eagles','Rare', 50, 1, 10),
     ('Wood Elves', 'Treeman','Rare', 225, 1, 1);
 
 INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit) VALUES (
