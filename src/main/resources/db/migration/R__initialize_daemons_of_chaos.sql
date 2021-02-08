@@ -49,7 +49,7 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Lord of Change'), 'Lord of Change', '8', 6, 6, 6, 6, 5, 6, '5', 9, 'Monster(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Great Unclean One'), 'Great Unclean One', '6', 6, 3, 6, 7, 6, 4, '5', 9, 'Monster(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Keeper of Secrets'), 'Keeper of Secrets', '10', 9, 6, 6, 6, 5, 10, '6', 9, 'Monster(Character)', 1),
-    ((SELECT unit_id from units WHERE unit_name ='Daemon Prince'), 'Daemon Prince', '8', 9, 5, 6, 5, 4, 8, '5', 9, 'Monster(Character)', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Daemon Prince' AND faction = 'Warriors of Chaos'), 'Daemon Prince', '8', 9, 5, 6, 5, 4, 8, '5', 9, 'Monster(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Skulltaker'), 'Skulltaker', '5', 9, 9, 5, 4, 2, 9, '4', 8, 'Infantry(Special Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Karanak'), 'Karanak', '8', 7, 0, 5, 5, 3, 6, '4', 8, 'War Beast(Special Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='The Blue Scribes'), 'The Blue Scribes', null, 3, 3, 3, 3, 2, 3, '2', 7, 'Cavalry(Special Character)', 1),

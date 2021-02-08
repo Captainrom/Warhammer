@@ -55,8 +55,8 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Dreadquake Mortar'), 'Chaos Dwarf', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 1),
     ((SELECT unit_id from units WHERE unit_name ='Dreadquake Mortar'), 'Slave Ogre', '6', 3, 2, 4, 4, 3, 2, '3', 7, '-', 1),
     ((SELECT unit_id from units WHERE unit_name ='Kdaai Destroyer'), 'Kdaai Destroyer', '9', 5, 3, 7, 6, 6, 5, '6', 8, 'Infantry', 1),
-    ((SELECT unit_id from units WHERE unit_name ='Hellcannon'), 'Hellcannon', '3', 4, 3, 5, 6, 5, 1, '5', 4, 'Monster', 1),
-    ((SELECT unit_id from units WHERE unit_name ='Hellcannon'), 'Chaos Dwarf Handlers', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 3),
+    ((SELECT unit_id from units WHERE unit_name ='Hellcannon' AND faction = 'Chaos Dwarf'), 'Hellcannon', '3', 4, 3, 5, 6, 5, 1, '5', 4, 'Monster', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Hellcannon' AND faction = 'Chaos Dwarf'), 'Chaos Dwarf Handlers', '3', 4, 3, 3, 4, 1, 2, '1', 9, '-', 3),
     ((SELECT unit_id from units WHERE unit_name ='Chaos Siege Giant'), 'Chaos Siege Giant', '5', 4, 3, 6, 5, 6, 3, 'Special', 10, 'Monster', 1);
 
 

@@ -47,7 +47,7 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Grimm Burloksson'), 'Grimm Burloksson', '3', 4, 5, 6, 4, 2, 2, '2', 9, 'Infantry(Special Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Thane'), 'Thane', '3', 6, 4, 4, 5, 2, 3, '3', 10, 'Infantry(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='RuneSmith'), 'RuneSmith', '3', 5, 4, 4, 4, 2, 2, '2', 9, 'Infantry(Character)', 1),
-    ((SELECT unit_id from units WHERE unit_name ='Master Engineer'), 'Master Engineer', '3', 4, 4, 4, 4, 2, 2, '2', 9, 'Infantry(Character)', 1),
+    ((SELECT unit_id from units WHERE unit_name ='Master Engineer' AND faction = 'Dwarfs'), 'Master Engineer', '3', 4, 4, 4, 4, 2, 2, '2', 9, 'Infantry(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Dragon Slayer'), 'Dragon Slayer', '3', 6, 3, 4, 5, 2, 4, '3', 10, 'Infantry(Character)', 1),
     ((SELECT unit_id from units WHERE unit_name ='Dwarf Warriors'), 'Dwarf Warrior', '3', 4, 3, 3, 4, 1, 2, '1', 9, 'Infantry', 100),
     ((SELECT unit_id from units WHERE unit_name ='Dwarf Warriors'), 'Veteran', '3', 4, 3, 3, 4, 1, 2, '2', 9, 'Infantry', 1),
