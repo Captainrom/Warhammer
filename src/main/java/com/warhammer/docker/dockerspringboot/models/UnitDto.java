@@ -1,6 +1,10 @@
 package com.warhammer.docker.dockerspringboot.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class UnitDto {
+    @JsonIgnore
+    private Integer unit_id;
     private String profile_name;
     private String unit_name;
     private String type;
@@ -18,6 +22,14 @@ public class UnitDto {
     private int leadership;
     private String troop_type;
     private int max_per_unit;
+
+    public Integer getUnit_id() {
+        return unit_id;
+    }
+
+    public void setUnit_id(Integer unit_id) {
+        this.unit_id = unit_id;
+    }
 
     public String getProfile_name() {
         return profile_name;

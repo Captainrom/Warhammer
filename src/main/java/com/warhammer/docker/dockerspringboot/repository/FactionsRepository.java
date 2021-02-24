@@ -1,5 +1,6 @@
 package com.warhammer.docker.dockerspringboot.repository;
 
+import com.warhammer.docker.dockerspringboot.models.OptionDto;
 import com.warhammer.docker.dockerspringboot.models.Unit;
 import com.warhammer.docker.dockerspringboot.models.UnitDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,23 @@ public class FactionsRepository {
         }
     }
 
-    public List<UnitDto> getUnit(String faction, String unit) {
-        String sql = "SELECT profile_name, unit_name, type, points_per_model, unit_size_min, unit_size_max, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit FROM units INNER JOIN profiles ON (units.unit_id = profiles.unit_id) WHERE faction = :faction AND units.unit_name = :unit ORDER BY unit_name ASC";
+    public List<UnitDto> getUnit(String faction, String unitName) {
+        String sql = "SELECT units.unit_id, profile_name, unit_name, type, points_per_model, unit_size_min, unit_size_max, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit FROM units INNER JOIN profiles ON (units.unit_id = profiles.unit_id) WHERE faction = :faction AND units.unit_name = :unitName ORDER BY unit_name ASC";
         try (Connection con = sql2o.open()) {
             return con.createQuery(sql)
                     .addParameter("faction", faction)
-                    .addParameter("unit", unit)
+                    .addParameter("unitName", unitName)
                     .executeAndFetch(UnitDto.class);
+        }
+    }
+
+    public List<OptionDto> getOptions(int unitId) {
+        try (Connection con = sql2o.open()) {
+            String get_options = "SELECT option_id, name, points, pointsPerModel, parent_option FROM options WHERE unit_id = :unitId";
+
+            return con.createQuery(get_options)
+                    .addParameter("unitId", unitId)
+                    .executeAndFetch(OptionDto.class);
         }
     }
 }

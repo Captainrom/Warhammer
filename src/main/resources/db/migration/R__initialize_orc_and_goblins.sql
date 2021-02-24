@@ -1,4 +1,5 @@
 DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 'Orcs & Goblins');
+DELETE FROM options WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 'Orcs & Goblins');
 DELETE FROM units WHERE faction = 'Orcs & Goblins';
 
 INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, unit_size_max) VALUES
@@ -147,3 +148,16 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Stone Trolls'), 'Stone Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', 10),
     ((SELECT unit_id from units WHERE unit_name ='River Trolls'), 'River Troll', '6', 3, 1, 5, 4, 3, 1, '3', 4, 'Monstrous Infantry', 10),
     ((SELECT unit_id from units WHERE unit_name ='Giant' AND faction = 'Orcs & Goblins'), 'Giant', '6', 3, 3, 6, 5, 6, 3, 'special', 10, 'Monster', 1);
+
+INSERT INTO options (unit_id, name, points, pointsPerModel) VALUES
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'Upgrade one Orc to an Orc Boss', 15, null),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'Upgrade one Orc to a musician', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'Upgrade one Orc to a standard bearer', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'The entire unit may take one of the following:', null, null),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'The entire unit may take shields', 1, true),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'A single unit in the army may be upgraded to Big ´Uns', 2, true),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'A unit of Big ´Uns may carry a Magic Standard worth up to 50 points', 50, null);
+
+INSERT INTO options (unit_id, name, points, pointsPerModel, parent_option) VALUES
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'Spears', 1, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins' AND name ='The entire unit may take one of the following:')),
+    ((SELECT unit_id from units WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins'), 'Additional hand weapons', 1, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Orc Boyz' AND faction = 'Orcs & Goblins' AND name ='The entire unit may take one of the following:'));

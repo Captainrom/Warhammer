@@ -28,3 +28,15 @@ create table profiles (
 );
 
 create index unit_id on profiles (unit_id);
+
+create table options (
+    option_id          INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    unit_id            INT,
+    name               TEXT NOT NULL,
+    points             INT,
+    pointsPerModel     BOOLEAN,
+    parent_option      INT,
+    constraint options_id_fk_1 foreign key (unit_id) references units (unit_id)
+);
+
+create index option_id on options (option_id);
