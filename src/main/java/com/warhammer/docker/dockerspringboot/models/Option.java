@@ -7,7 +7,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Option {
     private String name;
-    private Integer points;
+    private double points;
     private boolean pointsPerModel;
     private List<Option> options;
 
@@ -19,11 +19,11 @@ public class Option {
         this.name = name;
     }
 
-    public Integer getPoints() {
+    public double getPoints() {
         return points;
     }
 
-    public void setPoints(Integer points) {
+    public void setPoints(double points) {
         this.points = points;
     }
 

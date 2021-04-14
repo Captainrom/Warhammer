@@ -47,6 +47,15 @@ public class FactionsRepository {
         }
     }
 
+    public List<UnitDto> getUnit(long unitId) {
+        String sql = "SELECT units.unit_id, profile_name, unit_name, type, points_per_model, unit_size_min, unit_size_max, movement_allowance, weapon_skill, ballistic_skill, strength, toughness, wounds, initiative, attacks, leadership, troop_type, max_per_unit FROM units INNER JOIN profiles ON (units.unit_id = profiles.unit_id) WHERE units.unit_id = :unitId";
+        try (Connection con = sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("unitId", unitId)
+                    .executeAndFetch(UnitDto.class);
+        }
+    }
+
     public List<OptionDto> getOptions(int unitId) {
         try (Connection con = sql2o.open()) {
             String get_options = "SELECT option_id, name, points, pointsPerModel, parent_option FROM options WHERE unit_id = :unitId";

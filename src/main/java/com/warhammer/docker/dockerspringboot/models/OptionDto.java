@@ -3,7 +3,7 @@ package com.warhammer.docker.dockerspringboot.models;
 public class OptionDto {
     private Integer option_id;
     private String name;
-    private Integer points;
+    private double points;
     private boolean pointsPerModel;
     private Integer parent_option;
 
@@ -23,11 +23,11 @@ public class OptionDto {
         this.name = name;
     }
 
-    public Integer getPoints() {
+    public double getPoints() {
         return points;
     }
 
-    public void setPoints(Integer points) {
+    public void setPoints(double points) {
         this.points = points;
     }
 
