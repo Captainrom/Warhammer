@@ -221,9 +221,8 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Ellyrian Reavers' AND faction = 'High Elves'), 'Take bows', 3, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Ellyrian Reavers' AND faction = 'High Elves' AND name ='The entire unit may choose one of the following options:')),
     ((SELECT unit_id from units WHERE unit_name ='Ellyrian Reavers' AND faction = 'High Elves'), 'Replace spears with bows', 1, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Ellyrian Reavers' AND faction = 'High Elves' AND name ='The entire unit may choose one of the following options:'));
 
-    INSERT INTO options (unit_id, name, points, pointsPerModel) VALUES
-    ((SELECT unit_id from units WHERE unit_name ='Prince' AND faction = 'High Elves'), 'May be upgraded to have ithilmar barding', 7, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prince' AND faction = 'High Elves' AND name ='Elven Steed'));
-/*
+    INSERT INTO options (unit_id, name, points, pointsPerModel, parent_option) VALUES
+    ((SELECT unit_id from units WHERE unit_name ='Prince' AND faction = 'High Elves'), 'May be upgraded to have ithilmar barding', 7, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prince' AND faction = 'High Elves' AND name ='Elven Steed')),
     ((SELECT unit_id from units WHERE unit_name ='Prince' AND faction = 'High Elves'), 'May be upgraded to have Swiftsense', 10, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prince' AND faction = 'High Elves' AND name ='Great Eagle')),
     ((SELECT unit_id from units WHERE unit_name ='Prince' AND faction = 'High Elves'), 'May be upgraded to have Shredding Talons', 5, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prince' AND faction = 'High Elves' AND name ='Great Eagle')),
     ((SELECT unit_id from units WHERE unit_name ='Prince' AND faction = 'High Elves'), 'May be upgraded to have Swooping Strike', 25, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prince' AND faction = 'High Elves' AND name ='Griffon')),
