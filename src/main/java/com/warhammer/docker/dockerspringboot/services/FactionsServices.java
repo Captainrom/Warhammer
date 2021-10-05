@@ -26,6 +26,10 @@ public class FactionsServices {
         return factionsRepository.getFaction(faction);
     }
 
+    public List<Unit> getUnits() {
+        return factionsRepository.getUnits();
+    }
+
     public Map<String, Object> getUnit(String faction, String unit) {
         List<UnitDto> units = factionsRepository.getUnit(faction, unit);
 

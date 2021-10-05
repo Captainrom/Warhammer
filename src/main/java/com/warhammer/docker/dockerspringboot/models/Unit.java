@@ -1,6 +1,12 @@
 package com.warhammer.docker.dockerspringboot.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity(name = "units")
 public class Unit {
+    @Id
     private long unit_id;
     private String faction;
     private String unit_name;

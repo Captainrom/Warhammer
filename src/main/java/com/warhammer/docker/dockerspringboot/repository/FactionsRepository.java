@@ -56,6 +56,14 @@ public class FactionsRepository {
         }
     }
 
+    public List<Unit> getUnits() {
+        String sql = "SELECT unit_id, faction, unit_name, type, points_per_model, unit_size_min, unit_size_max FROM units";
+        try (Connection con = sql2o.open()) {
+            return con.createQuery(sql)
+                    .executeAndFetch(Unit.class);
+        }
+    }
+
     public List<OptionDto> getOptions(int unitId) {
         try (Connection con = sql2o.open()) {
             String get_options = "SELECT option_id, name, points, pointsPerModel, parent_option FROM options WHERE unit_id = :unitId";

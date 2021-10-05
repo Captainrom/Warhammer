@@ -14,8 +14,8 @@ import org.sql2o.Sql2o;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableTransactionManagement
-public class DatabaseContext implements TransactionManagementConfigurer {
+
+public class DatabaseContext  {
 
     @Autowired
     private Environment env;
@@ -30,11 +30,7 @@ public class DatabaseContext implements TransactionManagementConfigurer {
         return dataSourceBuilder.build();
     }
 
-    @Bean
-    @Override
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(getDataSource());
-    }
+
 
     @Bean
     public Sql2o sql2o() {
