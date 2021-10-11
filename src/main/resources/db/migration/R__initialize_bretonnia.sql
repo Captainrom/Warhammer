@@ -1,4 +1,5 @@
 DELETE FROM profiles WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 'Bretonnia');
+DELETE FROM options WHERE unit_id IN(SELECT unit_id FROM units WHERE faction = 'Bretonnia');
 DELETE FROM units WHERE faction = 'Bretonnia';
 
 INSERT INTO units (faction, unit_name, type, points_per_model, unit_size_min, unit_size_max) VALUES
@@ -66,3 +67,67 @@ INSERT INTO profiles (unit_id, profile_name, movement_allowance, weapon_skill, b
     ((SELECT unit_id from units WHERE unit_name ='Field Trebuchet'), 'Field Trebuchet', null, null, null, null, 7, 4, null, null, null, 'Warmachine', 10),
     ((SELECT unit_id from units WHERE unit_name ='Field Trebuchet'), 'Peasant', '4', 2, 2, 3, 3, 1, 3, '1', 5, 'Warmachine', 1),
     ((SELECT unit_id from units WHERE unit_name ='Field Trebuchet'), 'Yeoman Craftsman', '4', 3, 3, 3, 3, 1, 3, '1', 6, 'Warmachine', 1);
+
+INSERT INTO options (unit_id, name, points, pointsPerModel) VALUES
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'May have a morning star', 3, null),
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'If he has the Knight´s Vow or the Grail Vow, he may choose a lance', 6, null),
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'If he has the Questing Vow or the Grail Vow, he may choose a great weapon', 6, null),
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'May carry a shield', 3, null),
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'Must ride on off', null, null),
+    ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'May choose one Virtue from the Virtues of the Chivalric Knight list and a mix of magic items from the Common or Bretonnian magic items list with a maximum total value of.', 100, null),
+    ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'May be upgraded to a Lever 4', 35, null),
+    ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'May ride', null, null),
+    ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'May choose magic items from the Common or Bretonnian magic items list. But Cannot use magic weapons or magic armour, with a maximum total value of.', 100, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'May have a morning star', 2, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'If he has the Knight´s Vow or the Grail Vow, he may choose a lance', 4, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'If he has the Questing Vow or the Grail Vow, he may choose a great weapon', 4, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'May carry a shield', 2, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'Must ride on off', null, null),
+    ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'May choose one Virtue from the Virtues of the Chivalric Knight list and a mix of magic items from the Common or Bretonnian magic items list with a maximum total value of.', 50, null),
+    ((SELECT unit_id from units WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia'), 'Any Damsel may be upgraded to a Level 2 Wizard for', 35, null),
+    ((SELECT unit_id from units WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia'), 'May ride', null, null),
+    ((SELECT unit_id from units WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia'), 'May choose a mix of magic items from the Common or Bretonnian magic items list. But Cannot use magic weapons or magic armour, with a maximum total value of.', 50, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights Errant' AND faction = 'Bretonnia'), 'Upgrade one Knight Errant to a Musician', 7, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights Errant' AND faction = 'Bretonnia'), 'Upgrade one Knight Errant to a Standard Bearer', 14, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights Errant' AND faction = 'Bretonnia'), 'One unit may carry a magic banner worth up', 25, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights of the Realm' AND faction = 'Bretonnia'), 'Upgrade one Knights of the Realm to a Musician', 8, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights of the Realm' AND faction = 'Bretonnia'), 'Upgrade one Knights of the Realm to a Standard Bearer', 16, null),
+    ((SELECT unit_id from units WHERE unit_name ='Knights of the Realm' AND faction = 'Bretonnia'), 'Any unit may carry a magic banner worth up', 25, null),
+    ((SELECT unit_id from units WHERE unit_name ='Men-at-arms' AND faction = 'Bretonnia'), 'Any unit may replace its pole-arms with spears at no additional cost', 0, null),
+    ((SELECT unit_id from units WHERE unit_name ='Men-at-arms' AND faction = 'Bretonnia'), 'Upgrade one Men-at-arms to a Musician', 5, null),
+    ((SELECT unit_id from units WHERE unit_name ='Men-at-arms' AND faction = 'Bretonnia'), 'Upgrade one Men-at-arms to a Standard Bearer', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Men-at-arms' AND faction = 'Bretonnia'), 'Upgrade one Men-at-arms to a Yeoman Warden', 12, null),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'Any unit may be equipped with light armour', 1, true),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'One unit may replace its defensive stakes with the ability to Skirmish ', 1, true),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'Any unit may be equipped with braziers (all arrows count as flaming attacks)', 5, null),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'Upgrade one Peasant Bowman to a Musician', 5, null),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'Upgrade one Peasant Bowman to a Standard Bearer', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Peasant Bowmen' AND faction = 'Bretonnia'), 'Upgrade one Peasant Bowman to a Villein', 5, null),
+    ((SELECT unit_id from units WHERE unit_name ='Questing Knights' AND faction = 'Bretonnia'), 'Upgrade one Questing Knights to a Musician', 9, null),
+    ((SELECT unit_id from units WHERE unit_name ='Questing Knights' AND faction = 'Bretonnia'), 'Upgrade one Questing Knights to a Standard Bearer', 18, null),
+    ((SELECT unit_id from units WHERE unit_name ='Questing Knights' AND faction = 'Bretonnia'), 'Any unit may carry a magic banner worth up', 50, null),
+    ((SELECT unit_id from units WHERE unit_name ='Pegasus Knights' AND faction = 'Bretonnia'), 'Upgrade one Pegasus Knights to a Musician', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Pegasus Knights' AND faction = 'Bretonnia'), 'Upgrade one Pegasus Knights to a Standard Bearer', 20, null),
+    ((SELECT unit_id from units WHERE unit_name ='Mounted Yeoman' AND faction = 'Bretonnia'), 'Any unit may be equipped with light armour, but will no longer count as fast cavalry', 2, true),
+    ((SELECT unit_id from units WHERE unit_name ='Mounted Yeoman' AND faction = 'Bretonnia'), 'Any unit may be equipped with shields', 1, true),
+    ((SELECT unit_id from units WHERE unit_name ='Mounted Yeoman' AND faction = 'Bretonnia'), 'Upgrade one Yeoman to a Musician', 7, null),
+    ((SELECT unit_id from units WHERE unit_name ='Mounted Yeoman' AND faction = 'Bretonnia'), 'Upgrade one Yeoman to a Standard Bearer', 14, null),
+    ((SELECT unit_id from units WHERE unit_name ='Mounted Yeoman' AND faction = 'Bretonnia'), 'Upgrade one Yeoman to a Warden', 14, null),
+    ((SELECT unit_id from units WHERE unit_name ='Grail Knights' AND faction = 'Bretonnia'), 'Upgrade one Grail Knight to a Musician', 10, null),
+    ((SELECT unit_id from units WHERE unit_name ='Grail Knights' AND faction = 'Bretonnia'), 'Upgrade one Grail Knight to a Standard Bearer', 20, null),
+    ((SELECT unit_id from units WHERE unit_name ='Grail Knights' AND faction = 'Bretonnia'), 'The Unit may carry a magic banner worth up to', 50, null),
+    ((SELECT unit_id from units WHERE unit_name ='Field Trebuchet' AND faction = 'Bretonnia'), 'Upgrade one Peasant to a Yeoman Craftsman', 10, null);
+
+INSERT INTO options (unit_id, name, points, pointsPerModel, parent_option) VALUES
+   ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'Hippogryph', 200, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'Royal Pegasus', 50, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia'), 'barded Bretonnian Warhorse', 21, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Bretonnian Lord' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'Royal Pegasus', 50, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'Bretonnian Warhorse', 15, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'Royal Pegasus', 50, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Paladin' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Paladin' AND faction = 'Bretonnia'), 'barded Bretonnian Warhorse', 14, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Paladin' AND faction = 'Bretonnia' AND name ='May ride')),
+   ((SELECT unit_id from units WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia'), 'Bretonnian Warhorse', 10, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia' AND name ='May ride'));
+
+INSERT INTO options (unit_id, name, points, pointsPerModel, parent_option) VALUES
+    ((SELECT unit_id from units WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia'), 'May have barding', 6, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Prophetess of the Lady' AND faction = 'Bretonnia' AND name ='Bretonnian Warhorse')),
+    ((SELECT unit_id from units WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia'), 'May have barding', 6, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Damsel of the Lady' AND faction = 'Bretonnia' AND name ='Bretonnian Warhorse'));

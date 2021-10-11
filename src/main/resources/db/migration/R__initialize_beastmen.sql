@@ -186,5 +186,3 @@ INSERT INTO options (unit_id, name, points, pointsPerModel, parent_option) VALUE
 ((SELECT unit_id from units WHERE unit_name ='Centigors' AND faction = 'Beastmen'), 'Great weapon', 2, true, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Centigors' AND faction = 'Beastmen' AND name ='The entire unit may replace their spears and sheilds with:')),
 ((SELECT unit_id from units WHERE unit_name ='Bestigors' AND faction = 'Beastmen'), 'may have a Gift of Chaos worth up to', 25, false, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Bestigors' AND faction = 'Beastmen' AND name ='Upgrade one Bestigor to a Gouge-horn')),
 ((SELECT unit_id from units WHERE unit_name ='Bestigors' AND faction = 'Beastmen'), 'may have a magic standard worth up to', 50, false, (SELECT option_id FROM options LEFT JOIN units USING (unit_id) WHERE unit_name ='Bestigors' AND faction = 'Beastmen' AND name ='Upgrade one Bestigor to a standard bearer'));
-
-
